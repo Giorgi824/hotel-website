@@ -1,14 +1,15 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import logoWhite from "../assets/img/logo-white.svg";
 import logoDark from "../assets/img/logo-dark.svg";
 import { Link } from "react-router-dom";
-import { RoomContext } from "../context/RoomContext";
 
 const headerLinks = ["Home", "Rooms", "Restaurant", "SPA", "Contact"];
 
 const Header = () => {
   const [header, setHeader] = useState(false);
-  const { handleScrolling } = useContext(RoomContext);
+  function handleScrolling() {
+    window.scrollTo(0, 0);
+  }
   useEffect(() => {
     window.addEventListener("scroll", () => {
       window.scrollY > 50 ? setHeader(true) : setHeader(false);

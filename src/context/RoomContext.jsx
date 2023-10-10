@@ -32,10 +32,6 @@ function reducer(state, action) {
   }
 }
 
-function handleScrolling() {
-  window.scrollTo(0, 0);
-}
-
 const RoomProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { total, kids, adults } = state;
@@ -56,9 +52,7 @@ const RoomProvider = ({ children }) => {
   };
 
   return (
-    <RoomContext.Provider
-      value={{ state, handleClick, dispatch, handleScrolling }}
-    >
+    <RoomContext.Provider value={{ state, handleClick, dispatch }}>
       {children}
     </RoomContext.Provider>
   );

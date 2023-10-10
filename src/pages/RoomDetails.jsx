@@ -4,7 +4,6 @@ import { RoomContext } from "../context/RoomContext";
 // icons
 import { FaCheck } from "react-icons/fa";
 // scroll rop component
-import ScrollTop from "../components/ScrollToTop";
 import FourFields from "../components/FourFields";
 
 const hotelRules = [
@@ -25,7 +24,6 @@ const RoomDetails = () => {
   const { name, description, facilities, imageLg, price } = room;
   return (
     <section className="">
-      <ScrollTop />
       {/* banner */}
       <div className="bg-room h-[560px] bg-cover bg-center relative flex justify-center items-center">
         {/* overlay */}
